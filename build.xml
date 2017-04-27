@@ -8,7 +8,7 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="HRMSDP_Demo" default="default" basedir="." xmlns:sonar="antlib:org.sonar.ant" xmlns:ivy="antlib:org.apache.ivy.ant">
- 
+ <property environment="env"/>
   
     <description>Builds, tests, and runs the project HRMSDP.</description>
   
