@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.DeductionMaster" table="deduction_master" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employeeProfileByEmpdId" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="empd_id" />
+        </many-to-one>
+         <many-to-one name="deptdId" class="com.hrms.model.Departments" fetch="select">
+            <column name="deptd_id" />
+        </many-to-one>
+        <property name="deductionId" type="int">
+            <column name="deduction_id" not-null="true" />
+        </property>
+        <property name="deductionName" type="string">
+            <column name="deduction_name" length="20" />
+        </property>
+        <property name="deductionCode" type="string">
+            <column name="deduction_code" length="10" />
+        </property>
+        <property name="pf" type="java.lang.Integer">
+            <column name="pf" />
+        </property>
+        <property name="pfNo" type="java.lang.Integer">
+            <column name="pf_no" />
+        </property>
+        <property name="ppp" type="java.lang.Integer">
+            <column name="ppp" />
+        </property>
+        <property name="salaryAdvance" type="java.lang.Integer">
+            <column name="salary_advance" />
+        </property>
+        <property name="totalSanctionedAmount" type="java.lang.Integer">
+            <column name="total_sanctioned_amount" />
+        </property>
+        <property name="power" type="java.lang.Integer">
+            <column name="power" />
+        </property>
+        <property name="meals" type="java.lang.Integer">
+            <column name="meals" />
+        </property>
+        <property name="tiffin" type="java.lang.Integer">
+            <column name="tiffin" />
+        </property>
+        <property name="tea" type="java.lang.Integer">
+            <column name="tea" />
+        </property>
+        <property name="store" type="java.lang.Integer">
+            <column name="store" />
+        </property>
+        <property name="medicines" type="java.lang.Integer">
+            <column name="medicines" />
+        </property>
+        <property name="cable" type="java.lang.Integer">
+            <column name="cable" />
+        </property>
+        <property name="gas" type="java.lang.Integer">
+            <column name="gas" />
+        </property>
+        <property name="adv2" type="java.lang.Integer">
+            <column name="adv2" />
+        </property>
+        <property name="eggs" type="java.lang.Integer">
+            <column name="eggs" />
+        </property>
+        <property name="uniform" type="java.lang.Integer">
+            <column name="uniform" />
+        </property>
+        <property name="totalDeductions" type="java.lang.Integer">
+            <column name="total_deductions" />
+        </property>
+        <property name="ddate" type="date">
+            <column name="ddate" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

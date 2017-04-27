@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.LeaveMaster" table="leave_master" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeeProfile" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="emp_id" />
+        </many-to-one>
+        <property name="leaveTypeId" type="java.lang.Integer">
+            <column name="leave_type_id" />
+        </property>
+        <property name="empGrade" type="string">
+            <column name="emp_grade" length="5" />
+        </property>
+        <property name="numberOfDays" type="java.lang.Integer">
+            <column name="number_of_days" />
+        </property>
+        <property name="excludedDays" type="java.lang.Integer">
+            <column name="excluded_days" />
+        </property>
+    </class>
+</hibernate-mapping>

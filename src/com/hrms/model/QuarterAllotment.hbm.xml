@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.QuarterAllotment" table="quarter_allotment" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employeeProfile" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="emp_id" />
+        </many-to-one>
+        <many-to-one name="familyIdentity" class="com.hrms.model.FamilyIdentity" fetch="select">
+            <column name="family_unit_id" />
+        </many-to-one>
+        <many-to-one name="residentialQuarters" class="com.hrms.model.ResidentialQuarters" fetch="select">
+            <column name="quarter_id" />
+        </many-to-one>
+        <property name="alloted" type="string">
+            <column name="alloted" length="4" />
+        </property>
+        <property name="checkInDate" type="date">
+            <column name="check_in_date" length="10" />
+        </property>
+        <property name="checkOutDate" type="date">
+            <column name="check_out_date" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="hrmsdp_10"/>
+  <table-filter match-name="incentives"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="family_identity"/>
+  <table-filter match-name="ot_payout_schedule"/>
+  <table-filter match-name="employee_profile"/>
+  <table-filter match-name="dependents_information"/>
+  <table-filter match-name="departments"/>
+  <table-filter match-name="leave_master"/>
+  <table-filter match-name="loans_master"/>
+  <table-filter match-name="loan_eligibility"/>
+  <table-filter match-name="deduction_rules"/>
+  <table-filter match-name="user_rolls"/>
+  <table-filter match-name="deduction_master"/>
+  <table-filter match-name="quarter_allotment"/>
+  <table-filter match-name="overtime"/>
+  <table-filter match-name="employee_type"/>
+  <table-filter match-name="loan_allotment"/>
+  <table-filter match-name="wages"/>
+  <table-filter match-name="wage_definitions"/>
+  <table-filter match-name="incentive_rules"/>
+  <table-filter match-name="dependents"/>
+  <table-filter match-name="gas_connection_master"/>
+  <table-filter match-name="gas_allotment"/>
+  <table-filter match-name="residential_quarters"/>
+</hibernate-reverse-engineering>

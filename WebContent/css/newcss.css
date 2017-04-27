@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 9, 2016, 6:17:10 PM
+    Author     : NSG
+*/
+.text{
+    margin-right: -50px;
+   
+   
+}
+.label
+{
+    color:black;
+    font-size: 11pt;
+   
+}
+table,tr,td{
+   
+    padding:3px;
+}
+.lab{
+  width:95%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+textarea{
+    resize: none;
+}
+.ui-datepicker-trigger{
+    margin-left: 5px;
+    height: 35px;
+    position: absolute;
+   
+}
+table{
+    border-left:-30px;
+}
+.show {
+    text-align: left;
+}
+
+.bfsbutton {  
+    border-top: 1px solid #419641;  
+    background: #419641;  
+    background: -webkit-gradient(linear, left top, left bottom, from(#419641),  
+        to(#419641) );  
+    background: -webkit-linear-gradient(top, #419641, #419641);  
+    background: -moz-linear-gradient(top, #419641, #419641);  
+    background: -ms-linear-gradient(top, #419641, #419641);  
+    background: -o-linear-gradient(top, #419641, #419641);  
+    padding: 8px 55px;  
+    -webkit-border-radius: 10px;  
+    -moz-border-radius: 10px;  
+    border-radius: 10px;  
+    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;  
+    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;  
+    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;  
+    text-shadow: rgba(0, 0, 0, .4) 0 1px 0;  
+    color: white;  
+    font-size: 16px;  
+    font-family: Georgia, serif;  
+    text-decoration: none;  
+    vertical-align: middle;  
+  }  
+   
+  .show1{
+      margin-left: 1em;
+      margin-right:12em;
+      padding-right:1em;
+      padding-left:0em;
+     
+      
+  }
+  .disp{
+      color:#fff;
+  }
+

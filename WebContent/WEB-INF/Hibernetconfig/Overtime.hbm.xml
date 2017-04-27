@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.Overtime" table="overtime" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employeeProfile" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="emp_id" />
+        </many-to-one>
+        <property name="ot" type="string">
+            <column name="OT" length="7" />
+        </property>
+        <property name="otrate" type="java.lang.Integer">
+            <column name="OTrate" />
+        </property>
+        <property name="effectiveDate" type="date">
+            <column name="effective_date" length="10" />
+        </property>
+        <property name="wageId" type="java.lang.Integer">
+            <column name="wage_id" />
+        </property>
+    </class>
+</hibernate-mapping>

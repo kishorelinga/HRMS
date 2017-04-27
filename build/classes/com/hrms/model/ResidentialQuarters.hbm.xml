@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.ResidentialQuarters" table="residential_quarters" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="quarterId" type="int">
+            <column name="quarter_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="quarterType" type="string">
+            <column name="quarter_type" length="9" />
+        </property>
+        <property name="quarterCode" type="string">
+            <column name="quarter_code" length="20" />
+        </property>
+        <set name="quarterAllotments" table="quarter_allotment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="quarter_id" />
+            </key>
+            <one-to-many class="com.hrms.model.QuarterAllotment" />
+        </set>
+    </class>
+</hibernate-mapping>

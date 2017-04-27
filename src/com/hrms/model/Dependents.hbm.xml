@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.Dependents" table="dependents" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="familyHeadId" type="int">
+            <column name="family_head_id" />
+            <generator class="foreign">
+                <param name="property">familyIdentity</param>
+            </generator>
+        </id>
+        <one-to-one name="familyIdentity" class="com.hrms.model.FamilyIdentity" constrained="true"></one-to-one>
+    </class>
+</hibernate-mapping>

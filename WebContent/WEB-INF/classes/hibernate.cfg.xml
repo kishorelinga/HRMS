@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://35.154.200.202:3306/hrmsdp_10</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">1234</property>
+    <property name="show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="../Hibernetconfig/DeductionRules.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/Dependents.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/LoanEligibility.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/DeductionMaster.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/EmployeeProfile.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/WageDefinitions.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/LeaveMaster.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/QuarterAllotment.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/UserRolls.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/Departments.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/FamilyIdentity.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/GasConnectionMaster.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/IncentiveRules.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/LoansMaster.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/Wages.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/DependentsInformation.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/Overtime.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/OtPayoutSchedule.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/Incentives.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/GasAllotment.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/LoanAllotment.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/ResidentialQuarters.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/EmployeeType.hbm.xml"/>
+    <mapping resource="../Hibernetconfig/User.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

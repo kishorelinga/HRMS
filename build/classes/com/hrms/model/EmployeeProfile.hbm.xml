@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.EmployeeProfile" table="employee_profile" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="empId" type="int">
+            <column name="emp_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="departments" class="com.hrms.model.Departments" fetch="select">
+            <column name="dept_id" />
+        </many-to-one>
+        <many-to-one name="employeeType" class="com.hrms.model.EmployeeType" fetch="select">
+            <column name="emp_type_id" />
+        </many-to-one>
+        <property name="doj" type="date">
+            <column name="doj" length="10" />
+        </property>
+        <property name="empName" type="string">
+            <column name="emp_name" length="30" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="2" />
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="10" />
+        </property>
+        <property name="aadharNumber" type="string">
+            <column name="aadhar_number" length="20" />
+        </property>
+        <property name="maritialStatus" type="string">
+            <column name="maritial_status" length="8" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="quarterType" type="string">
+            <column name="quarter_type" length="30" />
+        </property>
+        <property name="perminentAddress" type="string">
+            <column name="perminent_address" />
+        </property>
+        <property name="selfContactNumber" type="string">
+            <column name="self_contact_number" length="15" />
+        </property>
+        <property name="emergencyContactNumber" type="string">
+            <column name="emergency_contact_number" length="15" />
+        </property>
+        <property name="otEligibility" type="string">
+            <column name="OT_eligibility" length="4" />
+        </property>
+        <property name="proofType" type="string">
+            <column name="proof_type" length="11" />
+        </property>
+        <property name="proofNumber" type="string">
+            <column name="proof_number" length="20" />
+        </property>
+        <property name="proofScannedCopy" type="binary">
+            <column name="proof_scanned_copy" />
+        </property>
+        <property name="empGrade" type="string">
+            <column name="emp_grade" length="5" />
+        </property>
+        <property name="recordCreationDate" type="date">
+            <column name="record_creation_date" length="10" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="10" />
+        </property>
+        <set name="leaveMasters" table="leave_master" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" />
+            </key>
+            <one-to-many class="com.hrms.model.LeaveMaster" />
+        </set>
+        <set name="overtimes" table="overtime" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" />
+            </key>
+            <one-to-many class="com.hrms.model.Overtime" />
+        </set>
+        <set name="gasAllotments" table="gas_allotment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" not-null="true" />
+            </key>
+            <one-to-many class="com.hrms.model.GasAllotment" />
+        </set>
+        <set name="loanAllotments" table="loan_allotment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empl_id" />
+            </key>
+            <one-to-many class="com.hrms.model.LoanAllotment" />
+        </set>
+        <set name="incentiveses" table="incentives" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empi_id" />
+            </key>
+            <one-to-many class="com.hrms.model.Incentives" />
+        </set>
+        <set name="wageses" table="wages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" />
+            </key>
+            <one-to-many class="com.hrms.model.Wages" />
+        </set>
+        <set name="deductionMasters" table="deduction_master" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empd_id" />
+            </key>
+            <one-to-many class="com.hrms.model.DeductionMaster" />
+        </set>
+        <set name="familyIdentities" table="family_identity" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="family_head_id" not-null="true" />
+            </key>
+            <one-to-many class="com.hrms.model.FamilyIdentity" />
+        </set>
+        <set name="quarterAllotments" table="quarter_allotment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" />
+            </key>
+            <one-to-many class="com.hrms.model.QuarterAllotment" />
+        </set>
+    </class>
+</hibernate-mapping>

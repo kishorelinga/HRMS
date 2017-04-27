@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.WageDefinitions" table="wage_definitions" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="wageId" type="int">
+            <column name="wage_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="empType" type="string">
+            <column name="emp_type" length="11" />
+        </property>
+        <property name="wageCalculation" type="string">
+            <column name="wage_calculation" length="7" />
+        </property>
+        <set name="wageses" table="wages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="wage_id" not-null="true" />
+            </key>
+            <one-to-many class="com.hrms.model.Wages" />
+        </set>
+        <set name="otPayoutSchedules" table="ot_payout_schedule" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="wage_id" not-null="true" />
+            </key>
+            <one-to-many class="com.hrms.model.OtPayoutSchedule" />
+        </set>
+    </class>
+</hibernate-mapping>

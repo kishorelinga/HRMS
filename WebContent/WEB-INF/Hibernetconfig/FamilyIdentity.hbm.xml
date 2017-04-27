@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.FamilyIdentity" table="family_identity" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="familyUnitId" type="int">
+            <column name="family_unit_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeeProfile" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="family_head_id" not-null="true" />
+        </many-to-one>
+        <set name="dependentsInformations" table="dependents_information" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="family_head_id" not-null="true" />
+            </key>
+            <one-to-many class="com.hrms.model.DependentsInformation" />
+        </set>
+        <set name="quarterAllotments" table="quarter_allotment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="family_unit_id" />
+            </key>
+            <one-to-many class="com.hrms.model.QuarterAllotment" />
+        </set>
+        <one-to-one name="dependents" class="com.hrms.model.Dependents"></one-to-one>
+    </class>
+</hibernate-mapping>

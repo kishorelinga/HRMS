@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.LoanAllotment" table="loan_allotment" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employeeProfile" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="empl_id" />
+        </many-to-one>
+         <many-to-one name="deptlId" class="com.hrms.model.Departments" fetch="select">
+            <column name="deptl_id" />
+        </many-to-one>
+        <many-to-one name="loansMaster" class="com.hrms.model.LoansMaster" fetch="select">
+            <column name="loan_id" />
+        </many-to-one>
+        <property name="loanType" type="string">
+            <column name="loan_type" length="25" />
+        </property>
+        <property name="gasLoan" type="java.lang.Integer">
+            <column name="gas_loan" />
+        </property>
+        <property name="traLoan" type="java.lang.Integer">
+            <column name="tra_loan" />
+        </property>
+        <property name="cashLoan" type="java.lang.Integer">
+            <column name="cash_loan" />
+        </property>
+        <property name="requestedAmt" type="java.lang.Integer">
+            <column name="requested_amt" />
+        </property>
+        <property name="sanctionedAmt" type="java.lang.Integer">
+            <column name="sanctioned_amt" />
+        </property>
+        <property name="status" type="string">
+            <column name="loan_status" length="50" />
+        </property>
+        <property name="loanApprovalDate" type="date">
+            <column name="loan_approval_date" length="10" />
+        </property>
+        <property name="loanCreationDate" type="date">
+            <column name="loan_creation_date" length="10" />
+        </property>
+        <property name="householdThings" type="string">
+            <column name="household_things" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,93 @@
+body
+{
+min-height:950px !important;
+}
+.mainLogo
+{
+margin-top:5% 0%;
+}
+.mainLogo1
+{
+margin-top:5% 0%;
+}
+
+.form-signin input[type="text"]
+{
+width:100%;
+height:35px;
+line-height:35px;
+padding:10px 10px 10px 35px;
+/*//background-color:transparent;*/
+/*//border-left:20px solid #FF9933;*/
+font-size: 16px;
+color:#666;
+    background-image: url(../images/author.jpg);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+.form-signin input[type="password"]
+{
+width:100%;
+height:35px;
+line-height:35px;
+padding:10px 10px 10px 35px;
+/*//background-color:transparent;*/
+/*//border-left:20px solid #FF9933;*/
+font-size: 16px;
+color:#666;
+    background-image: url(../images/key.jpg);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+.pan_1
+{
+min-height:550px !important;
+}
+
+.activated a
+{
+background-color:#33CCFF;
+color:#FFF !important;
+}
+
+.activated a:hover
+{
+background-color:#33CCFF !important;
+color:#FFF !important;
+}
+
+.activated1 a
+{
+color:#FFF !important;
+}
+
+.resize1
+{
+resize: none !important;
+}
+
+.star
+{
+color:#FF0000;
+}
+
+
+@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+
+
+
+@media only screen and (min-width: 150px) and (max-width: 600px) {
+.mainLogo1 a img
+{
+width:100%;
+height:auto;
+}
+
+}
+

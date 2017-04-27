@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.User" table="user" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="userId" type="int">
+            <column name="userId" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="20" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="20" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

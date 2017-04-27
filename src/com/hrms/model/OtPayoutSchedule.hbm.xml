@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.OtPayoutSchedule" table="ot_payout_schedule" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="wageDefinitions" class="com.hrms.model.WageDefinitions" fetch="select">
+            <column name="wage_id" not-null="true" />
+        </many-to-one>
+        <property name="payoutDays" type="java.lang.Integer">
+            <column name="payout_days" />
+        </property>
+    </class>
+</hibernate-mapping>

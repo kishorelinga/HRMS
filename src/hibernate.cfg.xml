@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://52.66.23.204:3306/hrmsdp_10</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">1234</property>
+    <property name="show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="com/hrms/model/DeductionRules.hbm.xml"/>
+    <mapping resource="com/hrms/model/Dependents.hbm.xml"/>
+    <mapping resource="com/hrms/model/LoanEligibility.hbm.xml"/>
+    <mapping resource="com/hrms/model/DeductionMaster.hbm.xml"/>
+    <mapping resource="com/hrms/model/EmployeeProfile.hbm.xml"/>
+    <mapping resource="com/hrms/model/WageDefinitions.hbm.xml"/>
+    <mapping resource="com/hrms/model/LeaveMaster.hbm.xml"/>
+    <mapping resource="com/hrms/model/QuarterAllotment.hbm.xml"/>
+    <mapping resource="com/hrms/model/UserRolls.hbm.xml"/>
+    <mapping resource="com/hrms/model/Departments.hbm.xml"/>
+    <mapping resource="com/hrms/model/FamilyIdentity.hbm.xml"/>
+    <mapping resource="com/hrms/model/GasConnectionMaster.hbm.xml"/>
+    <mapping resource="com/hrms/model/IncentiveRules.hbm.xml"/>
+    <mapping resource="com/hrms/model/LoansMaster.hbm.xml"/>
+    <mapping resource="com/hrms/model/Wages.hbm.xml"/>
+    <mapping resource="com/hrms/model/DependentsInformation.hbm.xml"/>
+    <mapping resource="com/hrms/model/Overtime.hbm.xml"/>
+    <mapping resource="com/hrms/model/OtPayoutSchedule.hbm.xml"/>
+    <mapping resource="com/hrms/model/Incentives.hbm.xml"/>
+    <mapping resource="com/hrms/model/GasAllotment.hbm.xml"/>
+    <mapping resource="com/hrms/model/LoanAllotment.hbm.xml"/>
+    <mapping resource="com/hrms/model/ResidentialQuarters.hbm.xml"/>
+    <mapping resource="com/hrms/model/EmployeeType.hbm.xml"/>
+    <mapping resource="com/hrms/model/User.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

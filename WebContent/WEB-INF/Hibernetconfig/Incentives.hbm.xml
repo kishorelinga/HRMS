@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.Incentives" table="incentives" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employeeProfileByEmpiId" class="com.hrms.model.EmployeeProfile" fetch="select">
+            <column name="empi_id" />
+        </many-to-one>
+         <many-to-one name="deptiId" class="com.hrms.model.Departments" fetch="select">
+            <column name="depti_id" />
+        </many-to-one>
+        <property name="incentiveId" type="int">
+            <column name="incentive_id" not-null="true" />
+        </property>
+        <property name="incentiveName" type="string">
+            <column name="incentive_name" length="20" />
+        </property>
+        <property name="incentiveCode" type="string">
+            <column name="incentive_code" length="10" />
+        </property>
+        <property name="wage" type="java.lang.Integer">
+            <column name="wage" />
+        </property>
+        <property name="days" type="java.lang.Integer">
+            <column name="days" />
+        </property>
+        <property name="inc" type="java.lang.Integer">
+            <column name="inc" />
+        </property>
+        <property name="earn" type="java.lang.Integer">
+            <column name="earn" />
+        </property>
+        <property name="incAmount" type="java.lang.Integer">
+            <column name="inc_amount" />
+        </property>
+        <property name="grossSalary" type="java.lang.Integer">
+            <column name="gross_salary" />
+        </property>
+        <property name="netSalary" type="java.lang.Integer">
+            <column name="net_salary" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

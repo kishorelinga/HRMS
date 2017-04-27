@@ -1,0 +1,505 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        
+        <!-- User Login -->
+         <action name="teststatusManager" >                   
+            <result name="success">/Home.jsp</result> 
+        </action>
+        
+        <action name="login" method="check" class="com.hrms.struts.UserAction"> 
+             <result name="fail">/index.jsp</result>
+              <result name="input">/index.jsp</result>
+            <result name="success">/Home.jsp</result> 
+        </action>
+        <action name="dashboard" class="com.hrms.struts.UserAction" >                   
+            <result name="success">/Home.jsp</result> 
+        </action>
+       <action name="logout" method="logOut" class="com.hrms.struts.UserAction"> 
+            <result name="success">/index.jsp</result> 
+        </action>
+        <action name="reset" class="com.hrms.struts.UserAction" >
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        
+        <!-- Loan Allotment -->
+        <action name="loanslist" method="getloanslist" class="com.hrms.struts.LoanAction">       
+            <result name="success">/Loans.jsp</result> 
+        </action>
+        <action name="addNewLoan" method="getlist" class="com.hrms.struts.LoanAction">       
+            <result name="success">/addNewLoan.jsp</result> 
+        </action>
+        <action name="assignLoan" method="addLoan" class="com.hrms.struts.LoanAction"> 
+            <result name="input">/addNewLoan.jsp</result>      
+            <result name="success" type="redirectAction">loanslist</result> 
+        </action>
+        <action name="editloan" method="editLoan" class="com.hrms.struts.LoanAction"> 
+            <result name="success">/EditLoans.jsp</result> 
+        </action>
+         <action name="deleteloan" method="deleteLoan" class="com.hrms.struts.LoanAction"> 
+            <result name="success" type="redirectAction">loanslist</result> 
+        </action>
+        <action name="updateLoan" method="updateLoan" class="com.hrms.struts.LoanAction"> 
+             <result name="input">/EditLoans.jsp</result>   
+            <result name="success" type="redirectAction">loanslist</result> 
+        </action>
+        <action name="loanView" method="loanView" class="com.hrms.struts.LoanAction"> 
+            <result name="success">/LoanView.jsp</result> 
+        </action>
+        
+        
+        
+        <!-- Deduction Master -->
+        <action name="deductions" method="getDedList" class="com.hrms.struts.DeductionAction">       
+            <result name="success">/Deductions.jsp</result> 
+        </action>
+        
+        <action name="getDedId" method="getDudid" class="com.hrms.struts.DeductionAction">       
+            <result name="success">/DeductionMaster.jsp</result> 
+        </action>
+        <action name="adddeduction" method="addDeduction" class="com.hrms.struts.DeductionAction"> 
+            <result name="input">/DeductionMaster.jsp</result>       
+            <result name="success" type="redirectAction">deductions</result> 
+        </action>
+        <action name="deletededuc" method="deleteDeduction" class="com.hrms.struts.DeductionAction">       
+            <result name="success" type="redirectAction">deductions</result> 
+        </action>
+         <action name="editdeduction" method="editDeduction" class="com.hrms.struts.DeductionAction">       
+            <result name="success">/EditDeductions.jsp</result> 
+        </action>
+         <action name="updatededuction" method="updateDeduction" class="com.hrms.struts.DeductionAction">       
+             <result name="input">/EditDeductions.jsp</result>
+             <result name="success" type="redirectAction">deductions</result> 
+        </action>
+        
+        
+        
+        <!-- Employee Profile -->
+       
+        <action  name="enroll" method="example" class="com.hrms.struts.EmployeeProfileAction">
+                        <result name="success">addEmployee.jsp</result>
+        </action> 
+        <action name="insertEmp" method="empInsert" class="com.hrms.struts.EmployeeProfileAction" >
+                        <result name="input">addEmployee.jsp</result>
+			<result name="success" type="redirectAction">display</result>
+        </action>
+        <action name="display" method="empDisplay" class="com.hrms.struts.EmployeeProfileAction">
+                        <result name="success">Employees.jsp</result>
+        </action>
+        <action name="Empldelete" method="empDelete" class="com.hrms.struts.EmployeeProfileAction">
+			<result name="success" type="redirectAction">display</result>
+        </action>  
+        <action  name="editEmp" method="empEdit" class="com.hrms.struts.EmployeeProfileAction" >
+			<result name="success" >EmployeeUpdate.jsp</result>
+        </action>
+        <action  name="employeeView" method="empView" class="com.hrms.struts.EmployeeProfileAction" >
+			<result name="success" >EmployeesView.jsp</result>
+        </action>
+        <action name="updateEmp" method="empUpdate" class="com.hrms.struts.EmployeeProfileAction">
+                        <result name="input">EmployeeUpdate.jsp</result>
+                        <result name="success" type="redirectAction" >display</result>
+        </action>
+
+        <!--  gasconnection master-->
+        
+        <action name="gasMasterenroll" method="gasEnroll" class="com.hrms.struts.GasMasterAction">
+                <result name="success">gasMaster.jsp</result>
+        </action>
+        <action name="gasMasterinsert" method="gasMasterInsert" class="com.hrms.struts.GasMasterAction">
+                <result name="input">gasMaster.jsp</result>
+                <result name="success" type="redirectAction">gasMasterdisplay</result>
+        </action>
+        <action name="gasMasterdisplay" method="gasMasterDisplay" class="com.hrms.struts.GasMasterAction">
+                <result name="success">gasMasterDisplay.jsp</result>
+        </action>
+        <action name="gasMasteredit" method="gasMasterEdit" class="com.hrms.struts.GasMasterAction">
+                <result name="success">gasMasterUpdate.jsp</result>
+        </action>
+        <action name="gasMasterupdate" method="gasMasterUpdate" class="com.hrms.struts.GasMasterAction">
+                <result name="input">gasMasterUpdate.jsp</result>
+                <result name="success" type="redirectAction">gasMasterdisplay</result>
+        </action>
+        <action name="gasMasterdelete" method="gasMasterDelete" class="com.hrms.struts.GasMasterAction">
+                <result name="success" type="redirectAction">gasMasterdisplay</result>
+        </action>
+        
+        
+<!-- Ot_payout_schedule-->
+
+        <action name="otPayoutenroll" method="otPayoutEnroll" class="com.hrms.struts.OtPayoutAction">
+                
+                <result name="success">otPayoutSchedule.jsp</result>
+        </action>
+        <action name="otPayoutinsert" method="otPayoutInsert" class="com.hrms.struts.OtPayoutAction">
+                <result name="input">otPayoutSchedule.jsp</result>
+                <result name="success" type="redirectAction">otPayoutdisplay</result>
+        </action>
+        <action name="otPayoutdisplay" method="otPayoutDisplay" class="com.hrms.struts.OtPayoutAction">
+                <result name="success">otPayoutDisplay.jsp</result>
+        </action>
+        <action name="otPayoutdelete" method="otPayoutDelete" class="com.hrms.struts.OtPayoutAction">
+                <result name="success" type="redirectAction">otPayoutdisplay</result>
+        </action>
+        <action name="otPayoutedit" method="otPayoutEdit" class="com.hrms.struts.OtPayoutAction">
+                <result name="success">otPayoutUpdate.jsp</result>
+        </action>
+        <action name="otPayoutupdate" method="otPayoutUpdate" class="com.hrms.struts.OtPayoutAction">
+                <result name="success" type="redirectAction">otPayoutdisplay</result>
+        </action>
+        
+        <!-- Loan Application Master -->
+         <action name="loanEnroll" method="expand" class="com.hrms.struts.LoanAppAction">
+                <result name="success">addLoanMaster.jsp</result>
+        </action>
+        <action name="loanInsert" method="loanInsert" class="com.hrms.struts.LoanAppAction">
+                <result name="input">addLoanMaster.jsp</result>
+                <result name="success" type="redirectAction">loanDisplay</result>
+                <result name="fail">addLoanMaster.jsp</result>
+        </action>
+        <action name="loanDisplay" method="loanDisplay" class="com.hrms.struts.LoanAppAction">
+                <result name="success">loanMaster.jsp</result>
+        </action>
+        <action name="loanDelete" method="loanDelete" class="com.hrms.struts.LoanAppAction">
+                <result name="success" type="redirectAction">loanDisplay</result>
+        </action>
+        <action name="loanEdit" method="loanEdit" class="com.hrms.struts.LoanAppAction">
+                <result name="success">loanMasterUpdate.jsp</result>
+        </action>
+        <action name="loanUpdate" method="loanUpdate" class="com.hrms.struts.LoanAppAction">
+                <result name="input">loanMasterUpdate.jsp</result>
+                <result name="success" type="redirectAction">loanDisplay </result>
+        </action>
+        
+        <!--Departments-->
+        <action name="deptEnroll" class="com.hrms.struts.DepartmentAction">
+                <result name="success">addDepartment.jsp</result>
+        </action>
+        <action name="deptInsert" method="insertDept" class="com.hrms.struts.DepartmentAction">
+                <result name="input">addDepartment.jsp</result>
+                <result name="success" type="redirectAction">deptDisplay</result>
+                <result name="fail">addDepartment.jsp</result>
+        </action>
+        <action name="deptDisplay" method="displayDept" class="com.hrms.struts.DepartmentAction">
+                <result name="success">Departments.jsp</result>
+        </action> 
+        <action name="deptDelete" method="deleteDept" class="com.hrms.struts.DepartmentAction">
+                <result name="success" type="redirectAction">deptDisplay</result>
+        </action>
+        <action name="deptEdit" method="editDept" class="com.hrms.struts.DepartmentAction">
+                <result name="success">DepartmentUpdate.jsp</result>
+        </action>
+        <action name="deptUpdate" method="updateDept" class="com.hrms.struts.DepartmentAction">
+                <result name="input">DepartmentUpdate.jsp</result>
+                <result name="success" type="redirectAction">deptDisplay</result>
+        </action>
+
+        <!--Deduction Rules-->
+        <action name="deductionEnroll" class="com.hrms.struts.DeductionRuleAction" method="exhibit">
+                <result name="success">addDeductionRules.jsp</result>
+        </action>
+        <action name="deductionInsert" class="com.hrms.struts.DeductionRuleAction" method="insertDeduction">
+                <result name="input">addDeductionRules.jsp</result>
+                <result name="success" type="redirectAction">deductionDisplay</result>
+                <result name="fail">addDeductionRules.jsp</result>
+        </action>
+        <action name="deductionDisplay" class="com.hrms.struts.DeductionRuleAction" method="displayDeduction">
+                <result name="success" >DeductionRules.jsp</result>
+        </action>
+        <action name="deductionDelete" class="com.hrms.struts.DeductionRuleAction" method="deleteDeduction">
+                <result name="success" type="redirectAction">deductionDisplay</result>
+        </action>
+        <action name="deductionEdit" class="com.hrms.struts.DeductionRuleAction" method="editDeduction">
+                <result name="success">DeductionRulesUpdate.jsp</result>
+        </action>
+        <action name="deductionUpdate" class="com.hrms.struts.DeductionRuleAction" method="updateDeduction">
+                <result name="input">DeductionRulesUpdate.jsp</result>
+                <result name="success" type="redirectAction">deductionDisplay</result>
+        </action>
+        
+        
+           
+        <!--employee type-->
+        <action name="empTypeEnroll" class="com.hrms.struts.Employ">
+            <result name="success">EmployeeType.jsp</result>
+        </action>
+        <action name="empdetails" class="com.hrms.struts.Employ" method="insert1">
+            <result name="input">EmployeeType.jsp</result>
+            <result name="success" type="redirectAction">EmpTypeDisplay</result>
+        </action>
+          
+        <action name="EmpTypeDisplay" class="com.hrms.struts.Employ" method="displayEmpType">
+            <result name="success">EmployeeTypeDisplay.jsp</result>
+        </action>
+          <action name="empEdit" method="editemp" class="com.hrms.struts.Employ">
+            <result name="success">updateEmployee.jsp</result>
+        </action>
+        <action name="empUpdate" method="updateemp" class="com.hrms.struts.Employ">
+            <result name="input">/updateEmployee.jsp</result>
+            <result name="success" type="redirectAction">EmpTypeDisplay</result>
+        </action>
+          
+          <action name="empDelete" method="deleteemp" class="com.hrms.struts.Employ">
+            <result name="success" type="redirectAction">EmpTypeDisplay</result>
+        </action>
+        
+        
+        
+         <!--Residential Quarters-->
+        <action name="quarterEnroll" class="com.hrms.struts.ResidentialAction" method="express">
+            <result name="success">AddResidential.jsp</result>
+        </action>
+        <action name="quarterInsert" class="com.hrms.struts.ResidentialAction" method="insertQuarter">
+            <result name="input">AddResidential.jsp</result>
+            <result name="success" type="redirectAction">quarterDisplay</result>
+        </action>
+        <action name="quarterDisplay" class="com.hrms.struts.ResidentialAction" method="displayQuarter">
+            <result name="success">Residential_Quarters.jsp</result>
+        </action>
+        <action name="quarterDelete" class="com.hrms.struts.ResidentialAction" method="deleteQuarter">
+            <result name="success" type="redirectAction">quarterDisplay</result>
+        </action>
+        <action name="quarterEdit" class="com.hrms.struts.ResidentialAction" method="editQuarter">
+            <result name="success">updateRes.jsp</result>
+        </action>
+        <action name="quarterUpdate" class="com.hrms.struts.ResidentialAction" method="updateQuarter">
+            <result name="input">updateRes.jsp</result>
+            <result name="success" type="redirectAction">quarterDisplay</result>
+        </action>
+        <action name="reset1" class="com.hrms.struts.ResidentialAction" method="Reset1">
+            <result name="success" >AddResidential.jsp</result>
+        </action>
+        
+        
+        <!-- Quarters -->
+        
+        <action name="quarter" class="com.hrms.struts.QuarterStruts" >
+            <result name="success">/SEarchquarters.jsp</result>           
+        </action>
+        <action name="retrieve" class="com.hrms.struts.QuarterStruts" method="list">
+            <result name="success">/Quarters.jsp</result>           
+        </action>
+         <action name="delete" class="com.hrms.struts.QuarterStruts" method="delete">
+            <result name="success" type="redirectAction">retrieve</result>           
+        </action>
+        <action name="search" class="com.hrms.struts.QuarterStruts" method="search">
+            <result name="success" >/AddQuarters.jsp</result> 
+           <result name="fail">/SEarchquarters.jsp</result>       
+        </action>
+        <action name="insertQrt" class="com.hrms.struts.QuarterStruts" method="insertQuarter">
+            <result name="input" >/AddQuarters.jsp</result>
+            <result name="success" type="redirectAction">retrieve</result>     
+        </action>
+         <action name="edit" class="com.hrms.struts.QuarterStruts" method="edit">
+            <result name="success">/update.jsp</result>     
+        </action>
+         <action name="update" class="com.hrms.struts.QuarterStruts" method="update">
+          <result name="input">/update.jsp</result>
+             <result name="success" type="redirectAction">retrieve</result>               
+        </action>
+         <action name="quarterView" class="com.hrms.struts.QuarterStruts" method="quarterView">
+            <result name="success">/QuarterView.jsp</result>     
+        </action>
+        
+        <!-- Gas Connections -->
+        <action name="gasconnection" class="com.hrms.struts.GasconnectionStruts" >
+            <result name="success">/searchEmployee.jsp</result>          
+        </action>
+        <action name="searchemp" class="com.hrms.struts.GasconnectionStruts" method="search">
+            <result name="success">/AddGasConnection.jsp</result>    
+            <result name="fail">/searchEmployee.jsp</result>  
+        </action>
+        <action name="insertGas" class="com.hrms.struts.GasconnectionStruts" method="insertgas">
+           <result name="input">/AddGasConnection.jsp</result>
+            <result name="success" type="redirectAction">retrieve1</result>          
+        </action>
+        
+        
+         <action name="retrieve1" class="com.hrms.struts.GasconnectionStruts" method="list1">
+            <result name="success">/GasConnections.jsp</result>          
+        </action>
+         <action name="edit1" class="com.hrms.struts.GasconnectionStruts" method="edit1">
+            <result name="success">/updategas.jsp</result>          
+        </action>
+      
+         <action name="updateGas" class="com.hrms.struts.GasconnectionStruts" method="update1">
+             <result name="input">/updategas.jsp</result>
+            <result name="success" type="redirectAction">retrieve1</result>          
+        </action>
+         <action name="delete1" class="com.hrms.struts.GasconnectionStruts" method="delete1">
+            <result name="success" type="redirectAction">retrieve1</result>          
+        </action>
+        <action name="gasConnectionView" class="com.hrms.struts.GasconnectionStruts" method="gasConnectionView">
+            <result name="success">/GasConnectionsView.jsp</result>          
+        </action>
+        
+        
+        
+             <!-- Payslip --> 
+         
+         <action name="generatepayslip" class="com.hrms.struts.pdfstruts" method="generatePayslip"> 
+               <result name="input">/Generatepayslip.jsp</result>             
+            <result name="success">/Generatepayslip.jsp</result>    
+         </action> 
+         <action name="payslip" class="com.hrms.struts.pdfstruts" method="searchPayslip">  
+             <result name="input">/Generatepayslip.jsp</result>  
+             <result name="success">/Payslip.jsp</result>    
+         </action> 
+         <action name="reset"  class="com.hrms.struts.pdfstruts" method="Reset">
+            <result name="success">/Generatepayslip.jsp</result>
+        </action>
+        
+         <!-- PDF Struts-->
+         <action name="generatePdf3" class="com.hrms.struts.pdfstruts" method="generateemployees">
+            <result name="input">/Reports.jsp</result>    
+            <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/pdf</param>
+                <param name="contentDisposition">filename="hrms_monthlysheet.pdf"</param>
+                <param name="bufferSize">1024</param>               
+             </result>               
+        </action> 
+         <action name="report1" class="com.hrms.struts.Reportsaction" method="employeePdf">
+           <result name="input">/Reportdate.jsp</result>     
+           <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/pdf</param>
+                <param name="contentDisposition">filename="employee_details.pdf"</param>
+                <param name="bufferSize">1024</param>               
+             </result> 
+        </action>   
+         <action name="reportemp" class="com.hrms.struts.Reportsaction" method="generateemployees">
+           <result name="input">/Reportdate1.jsp</result>     
+           <result name="success" type="stream">
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/pdf</param>
+                <param name="contentDisposition">filename="employee_details.pdf"</param>
+                <param name="bufferSize">1024</param>               
+             </result> 
+        </action>       
+         
+        
+        
+        <!-- Wage Definition Master -->
+        
+        <action name="abcde" class="com.hrms.struts.masterstrutswage" method="refreshpage">         
+            <result name="success">/Wagedefinitions.jsp</result>    
+         </action>  
+        
+         <action name="wage_def" class="com.hrms.struts.masterstrutswage" method="wagedefpage">
+            <result name="success">/Addwage_definitions.jsp</result>    
+         </action>      
+        
+         <action name="wagedef" class="com.hrms.struts.masterstrutswage" method="insertWagedef">
+            <result name="input">/Addwage_definitions.jsp</result>
+            <result name="success" type="redirectAction">abcde</result>               
+        </action>        
+        <action name="deletewage" class="com.hrms.struts.masterstrutswage" method="deleteWage">
+            <result name="success"  type="redirectAction">abcde</result>               
+        </action>    
+        <action name="editwagedef1" class="com.hrms.struts.masterstrutswage" method="editWage">
+            <result name="success">/editWagedef.jsp</result>               
+        </action>  
+         <action name="updatewage" class="com.hrms.struts.masterstrutswage" method="updateWage">
+             <result name="input">/editWagedef.jsp</result>
+            <result name="success"  type="redirectAction">abcde</result>               
+        </action>
+        
+        
+        
+        
+        
+        
+        <!-- Dependents Information Master -->
+        
+         <action name="dependentsinfo" class="com.hrms.struts.MasterDependentsInfostruts" method="dependentsinfolist">
+            <result name="success">/Dependents_Information.jsp</result>    
+         </action>  
+         <action name="dependents_info" class="com.hrms.struts.MasterDependentsInfostruts" method="SearchEmployee">
+            <result name="success">/searchEmpDependent.jsp</result>    
+         </action>  
+         <action name="searchEmpdependent" class="com.hrms.struts.MasterDependentsInfostruts" method="dependentsearch">
+             <result name="input">/AdddependentsInformation.jsp</result> 
+             <result name="success">/AdddependentsInformation.jsp</result>    
+            <result name="fail">/searchEmpDependent.jsp</result>  
+         </action>
+          <action name="insertdepnt" class="com.hrms.struts.MasterDependentsInfostruts" method="insertdependentsinfo">
+             <result name="input">/AdddependentsInformation.jsp</result>      
+            <result name="success" type="redirectAction">dependentsinfo</result>    
+         </action>  
+          <action name="goback" class="com.hrms.struts.MasterDependentsInfostruts" method="dependentsinfolist">  
+            <result name="success">/Dependents_Information.jsp</result>    
+         </action>  
+         <action name="deleteDep" class="com.hrms.struts.MasterDependentsInfostruts" method="deleteDepinfo">  
+            <result name="success"  type="redirectAction">dependentsinfo</result>    
+         </action> 
+         <action name="editDep" class="com.hrms.struts.MasterDependentsInfostruts" method="editdepinfo">  
+            <result name="success">/UpdteDependentsInfo.jsp</result>    
+         </action> 
+         <action name="abcdef" class="com.hrms.struts.MasterDependentsInfostruts" method="updatedep">  
+               <result name="input">/UpdteDependentsInfo.jsp</result>      
+            <result name="success" type="redirectAction">dependentsinfo</result>    
+         </action> 
+        
+         <!-- Wages -->
+         <action name="wagesDisplay" method="wageDisplay" class="com.hrms.struts.WagesAction">
+               <result name="success">wagesDisplay.jsp</result>
+         </action>
+         <action name="wagesEnroll" method="wageEnroll" class="com.hrms.struts.WagesAction">
+               <result name="success">wages.jsp</result>
+         </action>
+         <action name="wagesInsert" method="wageInsert" class="com.hrms.struts.WagesAction">
+               <result name="input">wages.jsp</result>
+               <result name="success" type="redirectAction">wagesDisplay</result>
+         </action>
+        <action name="wagesDelete" method="wageDelete" class="com.hrms.struts.WagesAction">
+               <result name="success">wagesDisplay.jsp</result>
+         </action>
+         <action name="wagesEdit" method="wageEdit" class="com.hrms.struts.WagesAction">
+               <result name="success">wagesUpdate.jsp</result>
+         </action>
+         <action name="wagesUpdate" method="wageUpdate" class="com.hrms.struts.WagesAction">
+                <result name="input">wagesUpdate.jsp</result>
+                <result name="success" type="redirectAction">wagesDisplay</result>
+         </action>
+         
+         
+         <!-- Incentives -->
+         
+         <action name="incentivesDisplay" method="incentiveDisplay" class="com.hrms.struts.IncentivesAction">
+               <result name="success">IncentiveDisplay.jsp</result>
+         </action>
+         <action name="incentivesEnroll" method="incentiveEnroll"  class="com.hrms.struts.IncentivesAction">
+               <result name="success">Incentives.jsp</result>
+         </action>
+         <action name="incUpd" class="com.hrms.struts.IncentivesAction" method="updateIncentives">
+             <result name="input">INCUPDATE.jsp</result>
+             <result name="success" type="redirectAction">incentivesDisplay</result>
+         </action>
+         
+         <action name="addincentive" method="incentiveInsert"  class="com.hrms.struts.IncentivesAction">
+               <result name="input">Incentives.jsp</result>
+               <result name="success" type="redirectAction">incentivesDisplay</result>
+         </action>
+         <action name="deleteincentive" method="incentiveDelete"  class="com.hrms.struts.IncentivesAction">
+               <result name="success">IncentiveDisplay.jsp</result>
+         </action>
+         <action name="editincentive" method="incentiveEdit"  class="com.hrms.struts.IncentivesAction">
+               <result name="success">INCUPDATE.jsp</result>
+         </action>
+        <!--- <action name="UpdateIncent" method="updateIncent"  class="com.hrms.struts.IncentivesAction">
+               <result name="input">IncentiveUpdate.jsp</result>
+               <result name="success" type="redirectAction">incentivesDisplay</result>
+         </action>-->
+         
+         
+         
+         
+         
+         
+    </package>
+</struts>

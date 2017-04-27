@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2016 10:52:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hrms.model.GasConnectionMaster" table="gas_connection_master" catalog="hrmsdp_10" optimistic-lock="version">
+        <id name="connectionId" type="int">
+            <column name="connection_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="gasCompanyName" type="string">
+            <column name="gas_company_name" length="50" />
+        </property>
+        <property name="gasStoveId" type="java.lang.Integer">
+            <column name="gas_stove_id" />
+        </property>
+        <property name="gasConnectionAmount" type="java.lang.Integer">
+            <column name="gas_connection_amount" />
+        </property>
+        <property name="gasCylinderCount" type="java.lang.Integer">
+            <column name="gas_cylinder_count" />
+        </property>
+        <property name="gasConnectionHolderName" type="string">
+            <column name="gas_connection_holder_name" length="50" />
+        </property>
+        <property name="gasConnectionValidateDate" type="date">
+            <column name="gas_connection_validate_date" length="10" />
+        </property>
+        <property name="consumerNumber" type="string">
+            <column name="consumer_number" length="20" />
+        </property>
+        <set name="gasAllotments" table="gas_allotment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="connection_id" />
+            </key>
+            <one-to-many class="com.hrms.model.GasAllotment" />
+        </set>
+    </class>
+</hibernate-mapping>
