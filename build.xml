@@ -100,7 +100,6 @@
 		
     </taskdef>
     <!-- Execute SonarQube Scanner for Ant Analysis -->
-<target name="sonar"> 
     <sonar:sonar />
 </target>   
      <target name="deploy">
