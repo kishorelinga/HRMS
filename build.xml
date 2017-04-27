@@ -97,8 +97,8 @@
         <classpath path="C:\Users\Dell\Documents\apache-ant-1.10.1\lib\sonarqube-ant-task-*.jar" />
 		
     </taskdef>
- 
     <!-- Execute SonarQube Scanner for Ant Analysis -->
+<target name="sonar"> 
     <sonar:sonar />
 </target>   
      <target name="deploy">
