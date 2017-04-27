@@ -11,7 +11,7 @@
  
   
     <description>Builds, tests, and runs the project HRMSDP.</description>
-    <import file="nbproject/build-impl.xml"/>
+  
 		
 	<target name="init">
 		<mkdir dir="web/WEB-INF/classes"/>
