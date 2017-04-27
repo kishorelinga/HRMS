@@ -109,7 +109,7 @@
                  status="uplad"
                  overwrite="true" 
                  publishivy="false" >
-      <artifacts pattern="dist/HRMSDP.war" />
+      <artifacts pattern="HRMSDP.war" />
     </ivy:publish>
   </target>
   <target name="copy.from.nexus">
