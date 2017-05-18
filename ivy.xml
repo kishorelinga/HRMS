@@ -1,7 +1,0 @@
-<ivy-module version="2.0">
-  <info organisation="org.sonatype.nexus.examples" module="HRMDSP" revision="1.0.0-SNAPSHOT"/>
-  <publications>
-    
-    <artifact type="war" ext="war" conf="default" />
-  </publications>
-  </ivy-module>
